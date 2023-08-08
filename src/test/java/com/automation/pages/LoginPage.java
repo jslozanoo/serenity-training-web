@@ -22,10 +22,12 @@ public class LoginPage extends PageObject {
     private WebElement notSuccessfulSignIMessage;
 
     public void openLoginPage() {
-        getDriver().get("http://the-internet.herokuapp.com/login");
+        openUrl("http://the-internet.herokuapp.com/login");
+        //getDriver().get("http://the-internet.herokuapp.com/login");
     }
 
     public void loginWithUsernameAndPassword(String username, String password) {
+        usernameInput.sendKeys(username);
         typeInto(usernameInput, username);
         typeInto(passwordInput, password);
         clickOn(loginButton);
