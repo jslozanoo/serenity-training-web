@@ -17,8 +17,8 @@ public class WhenUserLogin {
 
     @Test
     public void withValidCredentials() {
-        driver.get("http://the-internet.herokuapp.com/login");
-        driver.findElement(By.id("username")).sendKeys("tomsmith");
+        driver.get("http://the-internet.herokuapp.com/javascript_alerts");
+        driver.findElements(By.cssSelector("ul li")).get(0).click();
         driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
         driver.findElement(By.cssSelector("button[type='submit']")).click();
         assertThat(driver.findElement(By.id("flash")).isDisplayed()).isTrue();
